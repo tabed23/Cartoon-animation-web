@@ -1,0 +1,87 @@
+
+.homeintro{
+    padding: 310px 67px 500px;
+}
+
+.homeintro.singlebg{
+    background-image: url('../../assets/bg/homeintrosinglebg.png');
+    background-size: 56%;
+    background-repeat: no-repeat;
+    background-position-x: 82%;
+    background-position-y: 0;
+}
+
+.homeintro h1{
+    color: #FFF;
+    font-family: Trajan Pro Bold;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 88px */
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.homeintro h1 span{
+    color: #FCE866;
+    font-family: Trajan Pro Bold;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+.homeintrobtns{
+    display: flex;
+    justify-content: start;
+    gap: 54px;
+    margin-bottom: 50px;
+
+}
+
+.homeintrobtns button{
+    background-image: url('../../assets/bg/regbtnbg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 14px 55px;
+    background-position: center;
+}
+
+.homeintrobtns button a{
+    color: #FFF;
+    text-align: center;
+    /* Text Body */
+    font-family: redrosereg;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.homeintro p {
+    color: #FFF;
+    font-family: Trajan Pro Bold;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 600px;
+}
+
+.homeintro p span{
+    color: #FCE866;
+    font-family: Trajan Pro Bold;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+@media only screen and (max-width: 1440px){
+    .homeintro{
+        padding: 86px 67px 246px;
+    }
+    
+}

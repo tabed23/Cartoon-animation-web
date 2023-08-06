@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Trajan Pro Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Trajan Pro Regular"),
+    url("./assets/fonts/TrajanPro-Regular.woff") format("woff");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Trajan Pro Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Trajan Pro Bold"),
+    url("./assets/fonts/TrajanPro-Bold.woff") format("woff");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: "redrosereg";
+  src: 
+    url("./assets/fonts/RedRose-Regular.ttf") ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+  font-family: "redroselight";
+  src: 
+    url("./assets/fonts/RedRose-Light.ttf") ;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: "redrosebold";
+  src: 
+    url("./assets/fonts/RedRose-Bold.ttf");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+* {
+  font-family: "Trajan Pro Regular";
 }
+
+body{
+  background-image: url('./assets/bg/StartBoost\(Solo\ Boost\).png');
+  background-size: cover;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.App p{
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+

@@ -1,0 +1,44 @@
+.App nav{
+    padding: 10px 163px ;
+}
+.App nav .container-fluid{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-expand-lg .navbar-collapse{
+    justify-content: center;
+}
+
+.navbar-nav{
+    gap: 48px;
+}
+.App .nav-link {
+    font-family: 'Trajan Pro Bold';
+    color: #CCC;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.loginbtn{
+    font-family: Trajan Pro Bold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    background-color: transparent;
+    text-decoration: none !important;
+    background-image: url('../../assets/bg/normalbtnbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 12px 46px;
+}
+
+.loginbtn a{
+    text-decoration: none !important;
+    background: linear-gradient(180deg, #FFF 0%, #FCE866 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
