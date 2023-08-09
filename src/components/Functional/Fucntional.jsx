@@ -12,6 +12,10 @@ import til4 from '../../assets/images/til4.png'
 import til5 from '../../assets/images/til5.png'
 
 import medal1 from '../../assets/images/medal1.png'
+import medal2 from '../../assets/images/medal2.png'
+import medal3 from '../../assets/images/medal3.png'
+import medal4 from '../../assets/images/medal4.png'
+import medal5 from '../../assets/images/medal5.png'
 import deliverapprox from '../../assets/images/deliveryapproc.png'
 import priceapprox from '../../assets/images/pricapprox.png'
 
@@ -102,7 +106,15 @@ const Fucntional = (prop) => {
                             
                             
                             
-                            <span><img src={medal1} alt="" /></span></h2>
+                            <span><img src={
+                                
+                                prop.functonalTile === 'ranked' ? medal1 : 
+                                prop.functonalTile === 'calibration' ? medal2 :
+                                prop.functonalTile === 'dota' ? medal3 :
+                                prop.functonalTile === 'behave' ? medal4 :
+                                prop.functonalTile === 'low' ? medal5 :
+                                ''
+                            } alt="" /></span></h2>
                             <div className="boostbtns">
                                 <button className={prop.topbanner === 'solo'? 'boostbtn activeboostbtn' : 'boostbtn' } onClick={()=>prop.setTopBanner('solo')}>
                                     
