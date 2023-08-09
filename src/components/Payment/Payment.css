@@ -1,15 +1,48 @@
+.payment{
+    padding: 0 216px;
+}
+.paymentposttile img {
+    min-height: 320px;
+  }
+
+.purchaseinfobanner {
+    position: absolute;
+    top: -307px;
+    left: 0;
+    z-index: -999;
+  }
+  .purchaseinfobanner img {
+    width: 84%;
+  }
+
 .paymentblock{
-    background-image: url('../../assets/bg/paymentbg.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px 20px 20px;
-    border-right: 2px solid #03B9BB;
+    padding: 126px 73px 68px;
+    position: relative;
 }
 
+.paymentblock::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 13px;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/bg/paymentbg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -999;
+}
 
 .paymentservice button{
-    background: rgba(34, 183, 143, 0.10);
-    width: 60px;
+    /* background: rgba(34, 183, 143, 0.10);
+     */
+    background-image: url('../..//assets/bg/paymenymethodbg.svg');
+    background-size: contain;
+
+     width: 60px;
+     padding: 10px;
 }
 
 .paymentservice button.activepaymentbtn{
@@ -138,13 +171,19 @@ p.pricetext{
 
 .coupeninput button{
     background: var(--primary, #14C2A3);
-    padding: 12px 24px;
+    border: 1px solid transparent;
+    padding: 17px 24px 10px;
     color: var(--surface, #FFF);
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px; /* 120% */
     text-transform: capitalize;
+}
+
+.coupeninput button:hover{
+    background: transparent;
+    border-color: #14C2A3;
 }
 
 
@@ -168,13 +207,29 @@ p.pricetext{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background-image: url('../../assets/bg/redbtnbg.png');
+    /* background-image: url('../../assets/bg/redbtnbg.png'); */
     background-size: 100%;
     background-position-y: 5px;
-    padding: 12px 28px;
+    padding: 15px 28px 12px;
     background-repeat: no-repeat;
     margin: 0 auto;
     display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.paymentblock > button::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 259px;
+    height: 77px;
+    background-image: url('../../assets/bg/redbtnbg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 
@@ -194,4 +249,161 @@ p.pricetext{
 
 .payment{
     padding-bottom: 100px;
+}
+
+
+@media only screen and (min-width: 1921px){
+
+    .payment {
+        padding: 0px 515px;
+      }
+      .payment {
+        padding-bottom: 100px;
+      }
+      .paymentblock::before {
+        left: 30px;
+      }
+      .purchaseinfobanner {
+        left: 420PX;
+      }
+}
+
+
+@media only screen and (max-width: 1440px){
+    .payment {
+        padding: 0;
+        padding-bottom: 50px;
+    }
+    .purchaseinfobanner img {
+        width: 70%;
+      }
+      .purchaseinfobanner {
+        top: -200px;
+            left: -50px;
+      }
+      
+      
+}
+
+
+@media only screen and (max-width: 1200px){
+    .paymentblock {
+        padding: 86px 35px 68px;
+      }
+
+      .paymentblock .col-lg-4{
+        width: 40%;
+      }
+      .paymentservice button {
+        width: 49px;
+      }
+      .paymentservice {
+        margin: 18px 0;
+      }
+      .exraoption {
+        margin: 18px 0 40px;
+      }
+      .priceblock span {
+        font-size: 20px;
+        padding: 7px 40px;
+      }
+      .priceblock select {
+        font-size: 20px;
+      }
+
+      .coupeninput button {
+        font-size: 13px;
+        padding: 0 12px;
+      }
+      .coupeninput input {
+        width: 70%;
+        border: 2px solid rgba(34, 183, 143, 0.50);
+        padding: 0 20px;
+      }
+      .coupeninput {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .paymentinfo {
+        margin-bottom: 20px;
+      }
+      .paymentposttile img {
+        min-height: 240px;
+      }
+      .paymentposttile span {
+        font-size: 10px;
+      }
+      .purchaseinfo h2 {
+        font-size: 31px;
+      }
+      
+}
+
+
+@media only screen and (max-width: 900px){
+  .paymentblock::before {
+    width: 100%;
+    height: 100%;
+    left: 6px;
+  }
+
+  .paymentblock {
+    padding: 86px 35px 68px;
+    width: 67%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .purchaseinfobanner {
+    top: 74px;
+    left: 0;
+  }
+  .servicefeature .row {
+    position: relative;
+    z-index: 999;
+    width: 50%;
+    gap: 20px;
+  }
+  .dontmissout::after {
+    top: 63px;
+    width: 278px;
+  }
+}
+
+
+@media only screen and (max-width: 900px){
+
+  .paymentblock {
+    padding: 86px 10px 68px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .paymentblock .col-lg-4 {
+    width: 47%;
+  }
+  .paymentblock .col-lg-4 {
+    width: 62%;
+  }
+
+  .paymentblock::before {
+    content: none;
+  }
+
+
+  .exraoption {
+    justify-content: center;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .pamentposters .col-md-4{
+    width: 50%;
+  }
+  .purchaseinfo h2 {
+    font-size: 25px;
+    line-height: 1.6;
+  }
 }

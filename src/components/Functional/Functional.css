@@ -17,10 +17,23 @@
     line-height: normal;
     text-align: center;
     width: 100%;
-    border-bottom: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+    background-color: transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to top, #fff 0%, #fff 25%, #fff 50%, transparent 100%);
+    border-image-slice: 1;
     padding: 12px 18px;
+}
+.functional-til{
+    cursor: pointer;
+}
+.functional-til:hover button{
+    color : #FCE866;
+}
+
+.functional-til:hover img{
+    box-shadow: 0px 0px 32px 0px rgba(34, 183, 143, 0.50);
 }
 
 
@@ -101,10 +114,21 @@
     font-weight: 700;
     line-height: 28px; 
     text-transform: capitalize;
-    padding: 8px 83px;
+    padding: 20px 86px;
+    position: relative;
 }   
 
-
+.boostbtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/bg/widgtbtnbg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .boostbtn.activeboostbtn{
     border: 2px solid var(--primary, #14C2A3);
     background: rgba(34, 183, 143, 0.10);
@@ -153,12 +177,19 @@
     border: 1.6px solid rgba(255, 255, 255, 0.80); 
     background: transparent;
     max-width: 150px;
+    -webkit-appearance: none; 
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 
 .numberrangeinput button{
    
-    padding: 12px 32px;
+    padding: 17px 32px 11px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -169,6 +200,13 @@
     font-weight: 700;
     line-height: 24px; /* 133.333% */
     text-transform: capitalize;
+    border: 1px solid transparent;
+}
+
+.numberrangeinput button:hover{
+    background: transparent;
+    border-color: #14C2A3;
+
 }
 
 .numberrangeinput span{
@@ -243,9 +281,6 @@
 }
 
 .duoboostblock button{
-    background-image: url('../../assets/bg/redbtnbg.png');
-    background-size: 100%;
-    background-position-y: 5px;
     color: #FFF;
     text-align: center;
     font-family: redrosereg;
@@ -255,10 +290,31 @@
     line-height: normal;
     padding: 12px 28px;
     width: 100%;
-    background-repeat: no-repeat;
+    position: relative;
 }
+
+.duoboostblock button::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 259px;
+    height: 77px;
+    background-image: url('../../assets/bg/redbtnbg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.duoboostblock button:hover::before
+{
+    background-image: url('../../assets/bg/redbtnbg.png');
+
+}
+
 .duoboostblock{
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 1440px){
@@ -272,4 +328,95 @@
       .approx {
         padding: 5px;
       }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .funtional-tiles button {
+        font-size: 11px;
+      }
+      .boostbtn {
+        padding: 14px 53px;
+      }
+      .boostbtn::before {
+        background-size: contain;
+      }
+      .preftile button {
+        font-size: 9px;
+      }
+
+      .duoboostblock button::before {
+        width: 215px;
+      }
+      .duoboostblock button {
+        font-size: 17px;
+      }
+}
+
+@media only screen and (max-width: 900px){
+    .status-tags {
+        max-width: 300px;
+        margin: 0 auto 30px;
+      }
+      .preferences {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .duoboostblock h2, .duoboostblock p{
+        text-align: center;
+      }
+}
+
+
+
+@media only screen and (max-width: 767px){
+    .functional-til {
+        width: 42%;
+      }
+      .funtional-tiles button {
+        font-size: 9px;
+      }
+      .boostbtns {
+        flex-wrap: wrap;
+      }
+      .funtional-widget h2 {
+        font-size: 19px;
+        gap: 10px;
+      }
+      .funtional-widget {
+        padding: 20px;
+      }
+
+      .numberrangeinput input {
+        max-width: 98px;
+      }
+      .numberrangeinput {
+        flex-wrap: wrap;
+      }
+      .preferences p {
+        text-align: center;
+        width: 100%;
+      }
+      .preftile {
+        width: 46%;
+      }
+      .preimg {
+        max-width: 47px;
+      }
+      .preftile button {
+        font-size: 8px;
+        padding: 8px 2px;
+        height: 49px;
+        width: 100%;
+        line-height: 1.3;
+      }
+      .approx p {
+        font-size: 8px;
+        display: flex;
+        gap: 10px;
+      }
+      
 }

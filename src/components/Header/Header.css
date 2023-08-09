@@ -29,10 +29,29 @@
     border: none;
     background-color: transparent;
     text-decoration: none !important;
-    background-image: url('../../assets/bg/normalbtnbg.png');
+    /* background-image: url('../../assets/bg/normalbtnbg.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     padding: 12px 46px;
+    position: relative;
+}
+
+.loginbtn::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-image: url('../../assets/bg/normalbtnbg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.loginbtn:hover::before{
+   
+    background-image: url('../../assets/bg/loginbtnbg.svg');
+   
 }
 
 .loginbtn a{
@@ -41,4 +60,30 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
+}
+
+
+@media only screen and (max-width: 1200px){
+
+    .App nav {
+        padding: 0;
+      }
+
+      .App .nav-link {
+        font-size: 14px;
+      }
+
+      .navbar-nav {
+        gap: 22px;
+      }
+      
+
+
+}
+
+
+@media only screen and (max-width: 900px){
+    .loginbtn{
+        margin: 0 auto;
+    }
 }

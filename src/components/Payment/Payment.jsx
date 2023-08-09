@@ -17,7 +17,7 @@ const Payment = () => {
   return (
     <>
       <section className="payment">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="paymentblock">
@@ -98,31 +98,31 @@ const Payment = () => {
             <div className="col-lg-6 h-100">
               <div className="pamentposters h-100">
                 <div className="row justify-content-center align-items-center">
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 col-md-4">
                     <div className="paymentposttile">
                       <img src={poster1} alt="" />
                       <span>Free Pick Hero Option</span>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4  col-md-4">
                     <div className="paymentposttile">
                       <img src={poster2} alt="" />
                       <span>Free Pick Hero Option</span>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4  col-md-4">
                     <div className="paymentposttile">
                       <img src={poster3} alt="" />
                       <span>Free Pick Hero Option</span>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4  col-md-4">
                     <div className="paymentposttile">
                       <img src={poster4} alt="" />
                       <span>Free Pick Hero Option</span>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4  col-md-4">
                     <div className="paymentposttile">
                       <img src={poster5} alt="" />
                       <span>Free Pick Hero Option</span>

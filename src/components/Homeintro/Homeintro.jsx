@@ -1,20 +1,23 @@
 import React from 'react'
 import './Homeintro.css'
 
+import homeintro from '../../assets/images/homeintro.svg';
+
+
 const Homeintro = () => {
   return (
     <section className='homeintro singlebg'>
         <div className="container-lg">
             <div className="row">
-                <div className="col-md-7">
+                <div className="col-lg-7">
                      <h1>
                         GET DESIRED RANK <span>IN SWIFTBOOST</span>
                      </h1>
                      <div className="homeintrobtns">
-                        <button>
+                        <button className='startboostbtn'>
                             <a href="">START BOOST</a>
                         </button>
-                        <button>
+                        <button className='registerbtn'>
                             <a href="">REGISTER</a>
                         </button>
                      </div>
@@ -23,6 +26,12 @@ const Homeintro = () => {
                      <span> Discount Code.</span>
                      </p>
                 </div>
+                <div className="col-lg-5">
+                    <div className="homeintrobanner">
+                        <img src={homeintro}alt="" />
+                    </div>
+                </div>
+
             </div>
         </div>
     

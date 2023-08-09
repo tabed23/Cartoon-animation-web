@@ -8,13 +8,19 @@ import s4 from '../../assets/images/6.png'
 import s5 from '../../assets/images/facebook.png'
 import s6 from '../../assets/images/twitter.png'
 
+import purchaseinfobanner from '../../assets/images/purchaseinfobanner.png'
+
 const Purchaseinfo = () => {
   return (
     <>
     <section className="purchaseinfo">
         <div className="container">
             <div className="row">
-                <div className="col-lg-6"></div>
+                <div className="col-lg-6">
+                    <div className="purchaseinfobanner">
+                        <img src={purchaseinfobanner} alt="" />
+                    </div>
+                </div>
                 <div className="col-lg-6">
                     <h2>WHAT HAPPENS, WHEN I MAKE PURCHASE?</h2>
                     <div className="infotile">
