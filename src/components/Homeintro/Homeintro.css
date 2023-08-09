@@ -5,6 +5,7 @@
     /* background-image: url('../../assets/bg/homeintrobg.svg'); */
     /* background-repeat: no-repeat; */
     background-size: cover;
+    overflow: hidden;
 }
 
 .homeintro.singlebg{
@@ -133,7 +134,14 @@
     line-height: normal;
 }
 
+.homeintrobanner.homeduobanner img {
+    max-width: 170%;
+  }
 
+  .homeintrobanner.homeduobanner {
+    right: 129px;
+    top: -289px;
+  }
 @media only screen and (max-width: 1440px){
     .homeintro{
         padding: 86px 67px 246px;

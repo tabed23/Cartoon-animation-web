@@ -13,7 +13,7 @@ import poster3 from "../../assets/images/poster3.png";
 import poster4 from "../../assets/images/poster4.png";
 import poster5 from "../../assets/images/poster5.png";
 
-const Payment = () => {
+const Payment = (prop) => {
   return (
     <>
       <section className="payment">
@@ -72,7 +72,7 @@ const Payment = () => {
                       USD
                     </option>
                   </select>
-                  <span>$34.99</span>
+                  <span>${prop.value[1]/prop.value[0]}</span>
                 </div>
                 <p className="pricetext">
                   Price after

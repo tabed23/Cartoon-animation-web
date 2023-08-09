@@ -2,9 +2,10 @@ import React from 'react'
 import './Homeintro.css'
 
 import homeintro from '../../assets/images/homeintro.svg';
+import homeintro2 from '../../assets/images/homeintrobanner2.svg';
 
 
-const Homeintro = () => {
+const Homeintro = (prop) => {
   return (
     <section className='homeintro singlebg'>
         <div className="container-lg">
@@ -27,9 +28,18 @@ const Homeintro = () => {
                      </p>
                 </div>
                 <div className="col-lg-5">
+                    {prop.topbanner === 'solo'? 
+                    
                     <div className="homeintrobanner">
                         <img src={homeintro}alt="" />
                     </div>
+                    : 
+                    <div className="homeintrobanner homeduobanner">
+                        <img src={homeintro2}alt="" />
+                    </div>
+                    
+                    }
+                    
                 </div>
 
             </div>
