@@ -154,6 +154,10 @@
     .homeintro p {
         max-width: 501px;
       }
+      .homeintrobanner.homeduobanner {
+        right: 192px;
+        top: -177px;
+      }
 }
 
 @media only screen and (max-width: 1200px){
@@ -174,6 +178,13 @@
       }
       .homeintro h1 span {
         font-size: 40px;
+      }
+      .homeintrobanner.homeduobanner img {
+        max-width: 120%;
+      }
+      .homeintrobanner.homeduobanner {
+        right: 35px;
+        top: -97px;
       }
 
 }
@@ -199,6 +210,11 @@
       .funtional-tiles button {
         font-size: 16px;
       }
+
+      .homeintrobanner.homeduobanner {
+        right: -42px;
+        top: -97px;
+      }
 }
 
 @media only screen and (max-width: 767px){
@@ -210,4 +226,8 @@
       .homeintro {
         padding: 86px 10px 70px;
       } 
+      .homeintrobanner.homeduobanner {
+        right: -19px;
+        top: 0;
+      }
 }
