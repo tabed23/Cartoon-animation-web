@@ -72,7 +72,8 @@ const Payment = (prop) => {
                       USD
                     </option>
                   </select>
-                  <span>${prop.value[1]/prop.value[0]}</span>
+                  {/* <span>${prop.value[1]/prop.value[0]}</span> */}
+                  <span>{prop.calculatePrice()}</span>
                 </div>
                 <p className="pricetext">
                   Price after

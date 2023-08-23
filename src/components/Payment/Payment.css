@@ -267,7 +267,17 @@ p.pricetext{
         left: 420PX;
       }
 }
+@media only screen and (min-width: 3200px){
+  .payment {
+    padding: 0px 943px;
+  }
 
+  .purchaseinfobanner {
+    left: 812PX;
+    top: -186px;
+  }
+
+}
 
 @media only screen and (max-width: 1440px){
     .payment {

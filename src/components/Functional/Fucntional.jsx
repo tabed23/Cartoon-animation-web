@@ -29,7 +29,6 @@ const Fucntional = (prop) => {
     // const [value, setValue] = useState([30, 60]);
     // const [pref, setPref] = useState(1);
 
-
     const upperLimit = (e) => {
         var temp = prop.value[0]
         prop.setValue([temp, e.target.value]);
@@ -40,6 +39,16 @@ const Fucntional = (prop) => {
         prop.setValue([e.target.value, temp]);
         console.log(prop.value)
     } 
+
+
+    const onSliding = () =>{
+        prop.setCurrentMMR(prop.value[0])
+        prop.setTargetMMR(prop.value[1])
+        prop.calculatePrice();
+    }
+
+
+    
   return (
     <>
         <section className="functional-sec">
@@ -98,14 +107,7 @@ const Fucntional = (prop) => {
                                 prop.functonalTile === 'behave' ? 'Current BEHAVIOR SCORE ' :
                                 prop.functonalTile === 'low' ? 'Low Priority Removal ' :
                                 ''
-
-
                             }
-                               
-                            
-                            
-                            
-                            
                             <span><img src={
                                 
                                 prop.functonalTile === 'ranked' ? medal1 : 
@@ -125,8 +127,6 @@ const Fucntional = (prop) => {
                                         prop.functonalTile === 'behave' ? 'SOLO' :
                                         prop.functonalTile === 'low' ? 'SOLO ' :
                                         ''
-
-
                                     }
                                     
                                 </button>
@@ -138,8 +138,6 @@ const Fucntional = (prop) => {
                                         prop.functonalTile === 'behave' ? 'DUO' :
                                         prop.functonalTile === 'low' ? 'DUO ' :
                                         ''
-
-
                                     }
                                     
                                 </button>
@@ -157,7 +155,7 @@ const Fucntional = (prop) => {
                                     <div className="status-img">
                                         <img src={priceapprox} alt="" />
                                     </div>
-                                    <p>Price estimate <span>{prop.value[0]} to {prop.value[1]}</span></p>
+                                    <p>Price estimate <span>{prop.calculatePrice()}</span></p>
                                 </span>
                             </div>
                         </div>
@@ -171,16 +169,14 @@ const Fucntional = (prop) => {
                                 prop.functonalTile === 'behave' ? '10000' :
                                 prop.functonalTile === 'low' ? '10' :
                                 ''
-                            
-                            
                             } step={
-                                prop.functonalTile === 'ranked' ? '1000' : 
+                                prop.functonalTile === 'ranked' ? '1' : 
                                 prop.functonalTile === 'calibration' ? '5' :
                                 prop.functonalTile === 'dota' ? '5' :
-                                prop.functonalTile === 'behave' ? '1000' :
+                                prop.functonalTile === 'behave' ? '1' :
                                 prop.functonalTile === 'low' ? '1' :
                                 ''
-                            } onInput={prop.setValue} value={prop.value} />
+                            } onInput={prop.setValue} value={prop.value} onThumbDragStart={onSliding()}/>
                         <div className="rangeslidervalues"> 
                         {
                                 prop.functonalTile === 'ranked' ? 
@@ -265,12 +261,14 @@ const Fucntional = (prop) => {
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  />
                             <label class="form-check-label" for="flexCheckDefault">
+                            <span></span>
                                 express (+25%)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  checked/>
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
+                            <label class="form-check-label" for="flexCheckDefault1">
+                                <span></span>
                                  Stream (+15%)
                             </label>
                         </div>
@@ -301,25 +299,25 @@ const Fucntional = (prop) => {
                     </div>
                     <div className="preferences">
                         <p>ROLE</p>
-                        <div className={prop.pref === '1' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setPref('1')}>
+                        <div className={prop.pref === '1' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('core')}>
                             <div className="preimg">
                                 <img src={pref1} alt="" />
                             </div>
                             <button>CORE</button>
                         </div>
-                        <div className={prop.pref === '2' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setPref('2')}>
+                        <div className={prop.pref === '2' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('support')}>
                             <div className="preimg">
                                 <img src={pref2} alt="" />
                             </div>
                             <button>SUPPORT</button>
                         </div>
-                        <div className={prop.pref === '3' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setPref('3')}>
+                        <div className={prop.pref === '3' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('priority')}>
                             <div className="preimg">
                                 <img src={pref3} alt="" />
                             </div>
                             <button>NO PREFERENCE</button>
                         </div>
-                        <div className={prop.pref === '4' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setPref('4')}>
+                        <div className={prop.pref === '4' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('hero_preferences')}>
                             <div className="preimg">
                                 <img src={pref4} alt="" />
                             </div>

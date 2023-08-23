@@ -5,7 +5,7 @@
     /* background-image: url('../../assets/bg/homeintrobg.svg'); */
     /* background-repeat: no-repeat; */
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .homeintro.singlebg{
@@ -17,6 +17,22 @@
     
 }
 
+.homeintro.singlebg .col-lg-7{
+  position: relative;
+}
+
+.homeintro.singlebg .col-lg-7::before{
+  content: '';
+  position: absolute;
+  left: -112px;
+  top: -276px;
+  width: 904.132px;
+  height: 926.76px;
+  background-image: url(../../assets/bg//homeintrobefore.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .homeintrobanner img{
     width: 190%;
 }
@@ -25,7 +41,8 @@
     position: relative;
     right: 382px;
     top: -153px;
-  }
+    min-height: 1072px;
+}
 .homeintro h1{
     color: #FFF;
     font-family: Trajan Pro Bold;
@@ -143,6 +160,7 @@
     top: -289px;
   }
 @media only screen and (max-width: 1440px){
+  
     .homeintro{
         padding: 86px 67px 246px;
         margin: 0;

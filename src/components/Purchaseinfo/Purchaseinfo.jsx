@@ -72,20 +72,20 @@ fake discounts</h3>
         <div className="container">
             <h2>GET MMR BOOST FROM <span>Swiftboost.gg!</span> </h2>
             <div className="row">
-                <div className="col-lg-2"></div>
-                <div className="col-lg-4">
+                <div className="col-lg-1"></div>
+                <div className="col-lg-5">
                     <div className="getmmrtile">
                         <h3>Swift As The Wolves Of Icewrack</h3>
                         <p>A robust check out system, and streamlined order distribution lets us get your orders started almost immediately!</p>
                     </div>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-5">
                     <div className="getmmrtile">
                         <h3>Swift As The Wolves Of Icewrack</h3>
                         <p>A robust check out system, and streamlined order distribution lets us get your orders started almost immediately!</p>
                     </div>
                 </div>
-                <div className="col-lg-2"></div>
+                <div className="col-lg-1"></div>
             </div>
             <button>
                 START BOOSTING NOW
