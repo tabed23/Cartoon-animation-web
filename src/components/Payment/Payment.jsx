@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Payment.css";
 import deliverapprox from "../../assets/images/deliveryapproc.png";
 
@@ -14,6 +14,11 @@ import poster4 from "../../assets/images/poster4.png";
 import poster5 from "../../assets/images/poster5.png";
 
 const Payment = (prop) => {
+
+
+  const [payment, setPayment] = useState(1);
+
+
   return (
     <>
       <section className="payment">

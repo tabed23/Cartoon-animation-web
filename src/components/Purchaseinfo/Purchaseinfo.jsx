@@ -9,6 +9,7 @@ import s5 from '../../assets/images/facebook.png'
 import s6 from '../../assets/images/twitter.png'
 
 import purchaseinfobanner from '../../assets/images/purchaseinfobanner.png'
+import getmmr from '../../assets/images/getmmr.png'
 
 const Purchaseinfo = () => {
   return (
@@ -24,15 +25,18 @@ const Purchaseinfo = () => {
                 <div className="col-lg-6">
                     <h2>WHAT HAPPENS, WHEN I MAKE PURCHASE?</h2>
                     <div className="infotile">
+                        <span>01</span>
                         <h3>Instant redirection</h3>
                         <p>Right after payment, you will be redirected back to <span>swiftboost.gg</span>, where you will register for an account.</p>
                     </div>
                     <div className="infotile">
+                        <span>02</span>
                         <h3>Smart Client Dashboard</h3>
                         <p>Our client dashboard will have all the features you need to extend, or cancel your boost, speak to your assigned supervisor. Boost progress is updated in real time.
                         Add-ons you do have attached to your service, are accessible on the dashboard. Loyalty progress & swift points are displayed here.</p>
                     </div>
                     <div className="infotile">
+                        <span>03</span>
                         <h3>The Boost Begins</h3>
                         <p>Orders, once taken up by our boosters, usually within 5-10 minutes. Sometimes may take a little longer than that, though those situations are rare. You will get pinged, that a match has been found for your contract.</p>
                     </div>
@@ -47,18 +51,21 @@ const Purchaseinfo = () => {
                 <div className="row">
                     <div className="col-lg-4">
                         <div className="servicetile">
+                            <span>01</span>
                             <h3>We are the swiftest MMR boosting service available</h3>
                             <p>Only possible because of our hand picked selection of boosters, and the large amount of boosters we have on hand ready to work for you.</p>
                         </div>
                     </div>
                     <div className="col-lg-4">
                         <div className="servicetile">
+                        <span>02</span>
                             <h3>Our service operates 24/7</h3>
                             <p>Our streamlined order distribution system allows for your boost to start as soon as check out completes.</p>
                         </div>
                     </div>
                     <div className="col-lg-4">
                         <div className="servicetile">
+                        <span>03</span>
                             <h3>We don't offer
 fake discounts</h3>
                             <p>Due to our loyalty program our loyal customers can really get the best price in the industry.</p>
@@ -75,12 +82,14 @@ fake discounts</h3>
                 <div className="col-lg-1"></div>
                 <div className="col-lg-5">
                     <div className="getmmrtile">
+                        <span><img src={getmmr} alt="" /></span> 
                         <h3>Swift As The Wolves Of Icewrack</h3>
                         <p>A robust check out system, and streamlined order distribution lets us get your orders started almost immediately!</p>
                     </div>
                 </div>
                 <div className="col-lg-5">
                     <div className="getmmrtile">
+                        <span><img src={getmmr} alt="" /></span>
                         <h3>Swift As The Wolves Of Icewrack</h3>
                         <p>A robust check out system, and streamlined order distribution lets us get your orders started almost immediately!</p>
                     </div>
