@@ -312,6 +312,28 @@ background-repeat: no-repeat;
 
 }
 
+@media only screen and (max-width: 1600px) and (min-width: 1440px) {
+
+  .purchaseinfobanner img {
+    width: 77%;
+  }
+  .purchaseinfobanner {
+    position: absolute;
+    top: -167px;
+    left: -221px;
+    z-index: -999;
+  }
+
+  .dontmissout::after {
+    width: 443px;
+  }
+  .servicefeature::after {
+   
+    right: -115px;
+    bottom: -141px;
+    width: 723px;
+  }
+}
 
 
 @media only screen and (max-width: 1440px){
@@ -340,12 +362,37 @@ background-repeat: no-repeat;
       .dontmissout {
         padding: 50px 0;
       }
-
+      .servicetile {
+        padding: 17px;
+        background-size: 100% 100%;
+      }
 }
 
+@media only screen and (max-width: 1300px){
 
+  .paymentblock {
+    padding: 105px 73px 68px;
+  }
+
+  .paymentinfo {
+    margin-bottom: 26px;
+  }
+  .dontmissout::after {
+    top: -111px;
+    width: 371px;
+  }
+  .servicefeature .container {
+    max-width: 96%;
+  }
+  .servicefeature::after {
+    right: -96px;
+  }
+}
 
 @media only screen and (max-width: 1200px){
+  .paymentblock {
+    padding: 84px 73px 68px;
+  }
     .servicefeature .container {
         max-width: 98%;
       }
@@ -391,6 +438,14 @@ background-repeat: no-repeat;
         margin: 0px auto;
       }.purchaseinfo h2 {
         font-size: 31px;
+        line-height: 41.2px;
+      }
+
+      .purchaseinfo p{
+        line-height: 19px;
+      }
+      .purchaseinfobanner img {
+        width: 66%;
       }
 }
 
@@ -407,7 +462,23 @@ background-repeat: no-repeat;
         content: none;
       }
       .dontmissout .coupeninput {
-        max-width: 84%;
+        max-width: 44%;
         margin: 0px auto;
       }
+      .getmmr h2, .getmmr h2 span {
+        font-size: 40px;
+      }
+
+      .infotile{padding: 20px 20px 20px;}
+}
+
+@media only screen and (max-width: 767px){
+  .getmmrtile > span {
+    top: -25px;
+  }
+.paymentblock {
+    padding: 100px 20px 77px;
+  }
+  
+
 }

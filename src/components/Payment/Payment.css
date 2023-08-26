@@ -266,10 +266,11 @@ p.pricetext{
         left: 30px;
       }
       .purchaseinfobanner {
-        left: 420PX;
+        left: 196PX;
+        top: -266px;
       }
 }
-@media only screen and (min-width: 3200px){
+@media only screen and (min-width: 3200px ){
   .payment {
     padding: 0px 943px;
   }
@@ -281,21 +282,39 @@ p.pricetext{
 
 }
 
+@media only screen and (max-width: 1600px) and (min-width: 1440px) {
+  .payment {
+    padding: 0;
+  }
+
+  .payment {
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+
+  .paymentinfo {
+    margin-bottom: 47px;
+  }
+}
+
 @media only screen and (max-width: 1440px){
     .payment {
         padding: 0;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
     }
     .purchaseinfobanner img {
-        width: 70%;
+        width: 77%;
       }
       .purchaseinfobanner {
-        top: -200px;
-            left: -50px;
+        top: -176px;
+        left: -276px;
+        transform: rotate(3deg);
+        width: 1274px;
       }
       
-      
 }
+
+
 
 
 @media only screen and (max-width: 1200px){
@@ -304,7 +323,7 @@ p.pricetext{
       }
 
       .paymentblock .col-lg-4{
-        width: 40%;
+        width: 44%;
       }
       .paymentservice button {
         width: 49px;
@@ -349,7 +368,12 @@ p.pricetext{
       .purchaseinfo h2 {
         font-size: 31px;
       }
-      
+      .priceblock {
+        margin-bottom: 18px;
+      }
+      .paymentblock {
+        padding: 84px 73px 68px;
+      }
 }
 
 
@@ -371,6 +395,10 @@ p.pricetext{
   .purchaseinfobanner {
     top: 74px;
     left: 0;
+    width: 96%;
+  }
+  .purchaseinfobanner img {
+    width: 79%;
   }
   .servicefeature .row {
     position: relative;
@@ -418,4 +446,12 @@ p.pricetext{
     font-size: 25px;
     line-height: 1.6;
   }
+}
+
+@media only screen and (max-width: 767px){
+
+  .paymentblock .col-lg-4 {
+    width: 68%;
+  }
+  
 }

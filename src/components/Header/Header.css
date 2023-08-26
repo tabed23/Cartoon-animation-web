@@ -62,7 +62,13 @@
     -webkit-text-fill-color: transparent; 
 }
 
+@media only screen and (max-width: 1300px){
 
+    .App nav {
+      padding: 10px 60px;
+    }
+  }
+  
 @media only screen and (max-width: 1200px){
 
     .App nav {
@@ -85,5 +91,39 @@
 @media only screen and (max-width: 900px){
     .loginbtn{
         margin: 0 auto;
+    }
+    .navbar-brand{
+        order: 1;
+    }
+
+    .navbar-toggler{
+        order: 3
+    }
+    .navbar-collapse{
+        order: 4;
+    }
+
+    .loginbtn{
+        order : 2;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .loginbtn{
+        margin: 0 auto;
+    }
+    .navbar-brand{
+        order: 1;
+    }
+
+    .navbar-toggler{
+        order: 2
+    }
+    .navbar-collapse{
+        order: 4;
+    }
+
+    .loginbtn{
+        order : 3;
     }
 }

@@ -445,12 +445,21 @@ input[type="number"] {
   .duoboostblock button {
     font-size: 17px;
   }
+  .duoboostblock {
+    padding-left: 79px;
+  }
 }
 
 @media only screen and (max-width: 900px) {
+  .duoboostblock {
+    padding-left: 0px;
+  }
+  .duoboostblock::before {
+    content: none;
+  }
   .status-tags {
     max-width: 300px;
-    margin: 0 auto 30px;
+    margin: 0 auto 30px 0;
   }
   .preferences {
     display: flex;
@@ -511,4 +520,33 @@ input[type="number"] {
     display: flex;
     gap: 10px;
   }
+
+
+  .rangeslidervalues{
+    padding-left: 0;
+    padding-right: 10px;
+
+  }
+
+  .rangeslidervalues {
+    font-size: 10px;
+  }
+
+  .checkinputs label{
+    font-size: 10px;
+    padding-top: 7px;
+  }
+  .form-check{
+    padding-left: 0;
+  }
+  .checkinputs {
+    gap: 24px;
+  }
+  .duoboostblock::before {
+    content: none;
+  }
+  .duoboostblock {
+    padding-left: 0;
+  }
+  
 }

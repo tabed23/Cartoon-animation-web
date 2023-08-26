@@ -6,6 +6,7 @@
     /* background-repeat: no-repeat; */
     background-size: cover;
     /* overflow: hidden; */
+    margin-bottom: -300px;
 }
 
 .homeintro.singlebg{
@@ -31,6 +32,7 @@
   background-image: url(../../assets/bg//homeintrobefore.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: -1;
 }
 
 .homeintrobanner img{
@@ -157,7 +159,7 @@
 
   .homeintrobanner.homeduobanner {
     right: 129px;
-    top: -289px;
+    top: -144px;
   }
 @media only screen and (max-width: 1440px){
   
@@ -173,16 +175,25 @@
         max-width: 501px;
       }
       .homeintrobanner.homeduobanner {
-        right: 192px;
-        top: -177px;
+        right: 41px;
+        top: -91px;
       }
+      .homeintro{
+    margin-bottom: -500px;
+  }
+}
+@media only screen and (max-width: 1300px){
+  .homeintrobanner.homeduobanner {
+    right: 104px;
+    top: -91px;
+  }
 }
 
 @media only screen and (max-width: 1200px){
 
     .homeintro {
         padding: 86px 32px 70px;
-        margin: 0;
+        /* margin: 0; */
       }
       .homeintrobanner img {
         width: 166%;
@@ -198,11 +209,11 @@
         font-size: 40px;
       }
       .homeintrobanner.homeduobanner img {
-        max-width: 120%;
+        max-width: 154%;
       }
       .homeintrobanner.homeduobanner {
-        right: 35px;
-        top: -97px;
+        right: 37px;
+        top: -77px;
       }
 
 }
@@ -230,8 +241,12 @@
       }
 
       .homeintrobanner.homeduobanner {
-        right: -42px;
-        top: -97px;
+        right: 0;
+        top: 0;
+      }
+      .homeintro.singlebg .col-lg-7::before {
+        top: -150px;
+        width: 100%;
       }
 }
 
@@ -247,5 +262,12 @@
       .homeintrobanner.homeduobanner {
         right: -19px;
         top: 0;
+
+        
       }
+      .homeintro {
+        margin-bottom: -700px;
+      }
+
+      
 }

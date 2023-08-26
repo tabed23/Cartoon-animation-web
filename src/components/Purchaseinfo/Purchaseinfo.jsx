@@ -8,7 +8,7 @@ import s4 from '../../assets/images/6.png'
 import s5 from '../../assets/images/facebook.png'
 import s6 from '../../assets/images/twitter.png'
 
-import purchaseinfobanner from '../../assets/images/purchaseinfobanner.png'
+import purchaseinfobanner from '../../assets/images/purchaseinfobanner.svg'
 import getmmr from '../../assets/images/getmmr.png'
 
 const Purchaseinfo = () => {
