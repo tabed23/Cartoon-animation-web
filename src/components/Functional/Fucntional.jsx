@@ -130,12 +130,10 @@ const Fucntional = (prop) => {
     const upperLimit = (e) => {
         var temp = prop.value[0]
         prop.setValue([temp, e.target.value]);
-        console.log(prop.value)
     } 
     const lowerLimit = (e) => {
         var temp = prop.value[1]
         prop.setValue([e.target.value, temp]);
-        console.log(prop.value)
     } 
 
     const [medal, setMedal] = useState();
@@ -379,7 +377,7 @@ const Fucntional = (prop) => {
                         </div>
                     </div>
                     <div className="numberrangeinput">
-                        <input type="number" onInput={(e) => lowerLimit(e)} min={
+                        <input type="number" onInput={(e) => lowerLimit(e)} value={prop.value[0]} min={
                             0
                         } max={
                             prop.functonalTile === 'ranked' ? '8000' : 
@@ -390,8 +388,8 @@ const Fucntional = (prop) => {
                                 ''
                         }/>
                         <span>-</span>
-                        <input type="number"  onInput={(e) => upperLimit(e)} min={
-                            0
+                        <input type="number"  onInput={(e) => upperLimit(e)} value={prop.value[1]} min={
+                            prop.value[0]
                         } max={
                             prop.functonalTile === 'ranked' ? '8000' : 
                                 prop.functonalTile === 'calibration' ? '30' :

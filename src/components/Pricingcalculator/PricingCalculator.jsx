@@ -31,7 +31,6 @@ const PricingCalculator = (props) => {
     // const [totalPrice, setTotalPrice] = useState(0);
 
     const calculateTotalPrice = (targetMMR, currentMMR, addons) => {
-        console.log(addons)
         let sum_of_addons = 1;
         addons.forEach(addon => {
             sum_of_addons += Addon_Multipliers[addon];
