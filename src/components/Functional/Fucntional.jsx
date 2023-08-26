@@ -6,6 +6,12 @@ import 'react-range-slider-input/dist/style.css';
 
 import PricingCalculator from '../Pricingcalculator/PricingCalculator'
 
+import { motion, useAnimation } from "framer-motion";
+
+import { useInView } from "react-intersection-observer";
+
+import { Parallax } from 'react-scroll-parallax';
+
 
 import til1 from '../../assets/images/til1.png'
 import til2 from '../../assets/images/til2.png'
@@ -30,6 +36,77 @@ import pref3 from '../../assets/images/pref3.png'
 import pref4 from '../../assets/images/pref4.png'
 
 const Fucntional = (prop) => {
+
+    const boxvariant = {
+        visible: {
+            opacity: 3, 
+            y : 0,
+            scale: 1,
+            transition: {duration: 0.3}
+        },
+        hidden: {
+            opacity: 3,
+            scale: 1, 
+            y: 200
+        }
+    }
+
+
+    const leftvariant = {
+        visible: {
+            opacity: 3, 
+            x : 0,
+            scale: 1,
+            transition: {duration: 0.6}
+        },
+        hidden: {
+            opacity: 3,
+            scale: 1, 
+            x: 200
+        }
+    }
+
+    const rightvariant = {
+        visible: {
+            opacity: 3, 
+            x : 0,
+            scale: 1,
+            transition: {duration: 0.6}
+        },
+        hidden: {
+            opacity: 3,
+            scale: 1, 
+            x: -200
+        }
+    }
+
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+  
+    const control1 = useAnimation();
+    const [ref1, inView1] = useInView();
+
+    const control2 = useAnimation();
+    const [ref2, inView2] = useInView();
+
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+      if (inView1) {
+        control1.start("visible");
+      } else {
+        control1.start("hidden");
+      }
+      if (inView2) {
+        control2.start("visible");
+      } else {
+        control2.start("hidden");
+      }
+    }, [control, inView, control1, inView1,control2, inView2,]);
+
 
     // const [value, setValue] = useState([30, 60]);
     const [funcAddon, setfuncAddon] = useState(['Core']);
@@ -152,7 +229,9 @@ const Fucntional = (prop) => {
     <>
         <section className="functional-sec">
             <div className="container-lg">
-                <div className="funtional-tiles">
+                <motion.div className="funtional-tiles"  variants={boxvariant} ref={ref}
+                            initial="hidden"
+                            animate={control}>
                     <div className={prop.functonalTile === 'ranked'? 'functional-til activefunctionaltile':'functional-til'} onClick={()=> prop.setFunctonalTile('ranked')}>
                         <div className="til-img">
                             <img src={til1} alt="" />
@@ -193,8 +272,10 @@ const Fucntional = (prop) => {
                             LOW PRIORITY
                         </button>
                     </div>
-                </div>
-                <div className="funtional-widget">
+                </motion.div>
+                <motion.div className="funtional-widget" variants={leftvariant} ref={ref1}
+                            initial="hidden"
+                            animate={control1}>
                     <div className="row">
                         <div className="col-lg-2"></div>
                         <div className="col-lg-8">
@@ -427,8 +508,10 @@ const Fucntional = (prop) => {
                             <button>HERO PREFERENCES (15%)</button>
                         </div>
                     </div>
-                </div>
-                <div className="duoboostblock">
+                </motion.div>
+                <motion.div className="duoboostblock" variants={rightvariant} ref={ref2}
+                            initial="hidden"
+                            animate={control2}>
                     <div className="row align-items-center">
                         <div className="col-lg-1"></div>
                         <div className="col-lg-8">
@@ -439,7 +522,7 @@ const Fucntional = (prop) => {
                             <button>SUBMIT</button>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     </>

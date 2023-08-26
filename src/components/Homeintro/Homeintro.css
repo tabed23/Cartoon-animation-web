@@ -20,8 +20,18 @@
 
 .homeintro.singlebg .col-lg-7{
   position: relative;
+  animation: move-right 1s ease 200ms backwards;
 }
-
+@keyframes move-right {
+  from {
+   opacity: 0;
+   transform: translatex(-100px);
+  }
+  to {
+   opacity: 1;
+   transform: translate(0px);
+  }
+ }
 .homeintro.singlebg .col-lg-7::before{
   content: '';
   position: absolute;
@@ -37,8 +47,21 @@
 
 .homeintrobanner img{
     width: 190%;
+    animation: move-left 1s ease 200ms backwards;
+
 }
 
+
+@keyframes move-left {
+  from {
+   opacity: 0;
+   transform: translatex(100px);
+  }
+  to {
+   opacity: 1;
+   transform: translate(0px);
+  }
+ }
 .homeintrobanner {
     position: relative;
     right: 382px;

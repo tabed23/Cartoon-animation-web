@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Purchaseinfo.css'
 
 import s1 from '../../assets/images/3.png'
@@ -11,18 +11,78 @@ import s6 from '../../assets/images/twitter.png'
 import purchaseinfobanner from '../../assets/images/purchaseinfobanner.svg'
 import getmmr from '../../assets/images/getmmr.png'
 
+import { motion, useAnimation } from "framer-motion";
+
+import { useInView } from "react-intersection-observer";
+
+
 const Purchaseinfo = () => {
+
+  
+    const topvariant = {
+        visible: {
+            opacity: 3, 
+            y : 0,
+            scale: 1,
+            transition: {duration: 0.6}
+        },
+        hidden: {
+            opacity: 3,
+            scale: 1, 
+            y: -200
+        }
+    }
+ 
+const leftvariant = {
+    visible: {
+        opacity: 3, 
+        x : 0,
+        scale: 1,
+        transition: {duration: 0.6}
+    },
+    hidden: {
+        opacity: 3,
+        scale: 1, 
+        x: 200
+    }
+}
+
+    
+    
+    const control1 = useAnimation();
+    const [ref1, inView1] = useInView();
+    
+    const control2 = useAnimation();
+    const [ref2, inView2] = useInView();
+    
+    useEffect(() => {
+      if (inView1) {
+        control1.start("visible");
+      } else {
+        control1.start("hidden");
+      }
+      if (inView2) {
+        control2.start("visible");
+      } else {
+        control2.start("hidden");
+      }
+    }, [control1, inView1,control2, inView2,]);
+    
   return (
     <>
     <section className="purchaseinfo">
         <div className="container">
             <div className="row">
                 <div className="col-lg-6">
-                    <div className="purchaseinfobanner">
+                    <motion.div className="purchaseinfobanner" variants={topvariant} ref={ref1}
+                            initial="hidden"
+                            animate={control1}>
                         <img src={purchaseinfobanner} alt="" />
-                    </div>
+                    </motion.div>
                 </div>
-                <div className="col-lg-6">
+                <motion.div className="col-lg-6" variants={leftvariant} ref={ref2}
+                            initial="hidden"
+                            animate={control2}>
                     <h2>WHAT HAPPENS, WHEN I MAKE PURCHASE?</h2>
                     <div className="infotile">
                         <span>01</span>
@@ -40,7 +100,7 @@ const Purchaseinfo = () => {
                         <h3>The Boost Begins</h3>
                         <p>Orders, once taken up by our boosters, usually within 5-10 minutes. Sometimes may take a little longer than that, though those situations are rare. You will get pinged, that a match has been found for your contract.</p>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     </section>

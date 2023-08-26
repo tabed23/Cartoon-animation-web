@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Payment.css";
 import deliverapprox from "../../assets/images/deliveryapproc.png";
 
@@ -12,11 +12,66 @@ import poster2 from "../../assets/images/postere2.png";
 import poster3 from "../../assets/images/poster3.png";
 import poster4 from "../../assets/images/poster4.png";
 import poster5 from "../../assets/images/poster5.png";
+import { motion, useAnimation } from "framer-motion";
+
+import { useInView } from "react-intersection-observer";
+
+import { Parallax } from 'react-scroll-parallax';
+
 
 const Payment = (prop) => {
 
 
   const [payment, setPayment] = useState(1);
+ 
+
+const leftvariant = {
+    visible: {
+        opacity: 3, 
+        x : 0,
+        scale: 1,
+        transition: {duration: 0.6}
+    },
+    hidden: {
+        opacity: 3,
+        scale: 1, 
+        x: 200
+    }
+}
+
+const rightvariant = {
+    visible: {
+        opacity: 3, 
+        x : 0,
+        scale: 1,
+        transition: {duration: 0.6}
+    },
+    hidden: {
+        opacity: 3,
+        scale: 1, 
+        x: -200
+    }
+}
+
+
+const control1 = useAnimation();
+const [ref1, inView1] = useInView();
+
+const control2 = useAnimation();
+const [ref2, inView2] = useInView();
+
+useEffect(() => {
+  if (inView1) {
+    control1.start("visible");
+  } else {
+    control1.start("hidden");
+  }
+  if (inView2) {
+    control2.start("visible");
+  } else {
+    control2.start("hidden");
+  }
+}, [control1, inView1,control2, inView2,]);
 
 
   return (
@@ -25,7 +80,9 @@ const Payment = (prop) => {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <div className="paymentblock">
+              <motion.div className="paymentblock" variants={rightvariant} ref={ref1}
+                            initial="hidden"
+                            animate={control1}>
                 <div className="col-lg-4">
                   <div className="status-tags">
                     <span className="approx">
@@ -99,10 +156,12 @@ const Payment = (prop) => {
                   payment at this time.
                 </span>
                 <button>START BOOST</button>
-              </div>
+              </motion.div>
             </div>
             <div className="col-lg-6 h-100">
-              <div className="pamentposters h-100">
+              <motion.div className="pamentposters h-100" variants={leftvariant} ref={ref2}
+                            initial="hidden"
+                            animate={control2}>
                 <div className="row justify-content-center align-items-center">
                   <div className="col-lg-4 col-md-4">
                     <div className="paymentposttile">
@@ -135,7 +194,7 @@ const Payment = (prop) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
