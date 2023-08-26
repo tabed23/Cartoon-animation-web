@@ -39,16 +39,16 @@ const Payment = (prop) => {
                   </div>
                 </div>
                 <div className="paymentservice">
-                  <button className="activepaymentbtn">
+                  <button className={payment === 1? "activepaymentbtn" :''} onClick={()=> setPayment(1)}>
                     <img src={pay1} alt="" />
                   </button>
-                  <button>
+                  <button className={payment === 2? "activepaymentbtn" :''} onClick={()=> setPayment(2)}>
                     <img src={pay2} alt="" />
                   </button>
-                  <button>
+                  <button className={payment === 3? "activepaymentbtn" :''} onClick={()=> setPayment(3)}>
                     <img src={pay3} alt="" />
                   </button>
-                  <button>
+                  <button className={payment === 4? "activepaymentbtn" :''} onClick={()=> setPayment(4)}>
                     <img src={pay4} alt="" />
                   </button>
                 </div>
@@ -78,7 +78,7 @@ const Payment = (prop) => {
                     </option>
                   </select>
                   {/* <span>${prop.value[1]/prop.value[0]}</span> */}
-                  <span>{prop.calculatePrice()}</span>
+                  <span></span>
                 </div>
                 <p className="pricetext">
                   Price after

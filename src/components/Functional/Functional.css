@@ -72,6 +72,8 @@
 .funtional-widget h2 span {
   max-width: 72px;
   display: block;
+  min-height: 72px;
+  margin-left: 18px;
 }
 
 .approx {

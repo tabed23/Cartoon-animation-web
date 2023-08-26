@@ -1,8 +1,10 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
 import './Functional.css'
 
 import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
+
+import PricingCalculator from '../Pricingcalculator/PricingCalculator'
 
 
 import til1 from '../../assets/images/til1.png'
@@ -16,6 +18,9 @@ import medal2 from '../../assets/images/medal2.png'
 import medal3 from '../../assets/images/medal3.png'
 import medal4 from '../../assets/images/medal4.png'
 import medal5 from '../../assets/images/medal5.png'
+import medal7 from '../../assets/images/medal7.png'
+import medal8 from '../../assets/images/SeasonalRankTop0.webp'
+import medal6 from '../../assets/images/meadal6.png'
 import deliverapprox from '../../assets/images/deliveryapproc.png'
 import priceapprox from '../../assets/images/pricapprox.png'
 
@@ -27,8 +32,101 @@ import pref4 from '../../assets/images/pref4.png'
 const Fucntional = (prop) => {
 
     // const [value, setValue] = useState([30, 60]);
-    // const [pref, setPref] = useState(1);
+    const [funcAddon, setfuncAddon] = useState(['Core']);
+    const [nopref, setnopref] = useState(false);
+    // const [funcAddon1, setfuncAddon1] = useState([]);
 
+    const coreaddon = () =>{
+        if(funcAddon.includes('Core')){
+            const arrayvalue = [ ...funcAddon ];
+            let index = arrayvalue.indexOf('Core');
+            arrayvalue.splice(index, 1);
+            setfuncAddon(arrayvalue);
+
+            var size = arrayvalue.length;
+            if(size === 1){
+                let index = arrayvalue.indexOf('HeroPref');
+                arrayvalue.splice(index, 1);
+                setfuncAddon(arrayvalue);
+            }
+        }
+        else{
+            if(funcAddon.includes('Support')){
+                const arrayvalue = [ ...funcAddon ];
+                let index = arrayvalue.indexOf('Support');
+                arrayvalue.splice(index, 1);
+                arrayvalue.push('Core');
+                setfuncAddon(arrayvalue);
+            }
+            else{
+                const arrayvalue = [ ...funcAddon ];
+                arrayvalue.push('Core');
+                setfuncAddon(arrayvalue);
+            }
+        }
+        setnopref(false)
+    }
+    const supportaddon = () =>{
+        if(funcAddon.includes('Support')){
+            const arrayvalue = [ ...funcAddon ];
+            let index = arrayvalue.indexOf('Support');
+            arrayvalue.splice(index, 1);
+            setfuncAddon(arrayvalue);
+
+            var size = arrayvalue.length;
+            if(size === 1){
+                let index = arrayvalue.indexOf('HeroPref');
+                arrayvalue.splice(index, 1);
+                setfuncAddon(arrayvalue);
+            }
+        }
+        else{
+            if(funcAddon.includes('Core')){
+                const arrayvalue = [ ...funcAddon ];
+                let index = arrayvalue.indexOf('Core');
+                arrayvalue.splice(index, 1);
+                arrayvalue.push('Support');
+                setfuncAddon(arrayvalue);
+            }
+            else{
+                const arrayvalue = [ ...funcAddon ];
+                arrayvalue.push('Support');
+                setfuncAddon(arrayvalue);
+            }
+        }
+        setnopref(false)
+    }
+
+    const noprefaddon = () =>{
+        if(funcAddon.includes('Support') || funcAddon.includes('Core') || funcAddon.includes('HeroPref')){
+            const arrayvalue = [ ...funcAddon ];
+            let index = arrayvalue.indexOf('Support');
+            let index1 = arrayvalue.indexOf('Core');
+            let index2 = arrayvalue.indexOf('HeroPref');
+            arrayvalue.splice(index, 1);
+            arrayvalue.splice(index1, 1);
+            arrayvalue.splice(index2, 1);
+            setfuncAddon(arrayvalue);
+        }
+        setnopref(true)
+    }
+
+    const heroprefaddon = () =>{
+        if(funcAddon.includes('HeroPref')){
+            const arrayvalue = [ ...funcAddon ];
+            let index = arrayvalue.indexOf('HeroPref');
+            arrayvalue.splice(index, 1);
+            setfuncAddon(arrayvalue);
+        }
+        else{
+            if(funcAddon.includes('Support') || funcAddon.includes('Core') ){
+                const arrayvalue = [ ...funcAddon ];
+                arrayvalue.push('HeroPref');
+                setfuncAddon(arrayvalue);
+            }      
+        }
+        setnopref(false)
+    }
     const upperLimit = (e) => {
         var temp = prop.value[0]
         prop.setValue([temp, e.target.value]);
@@ -40,15 +138,18 @@ const Fucntional = (prop) => {
         console.log(prop.value)
     } 
 
+    const [medal, setMedal] = useState();
+
+    useEffect(() => {
+        setMedal(prop.value[1] - prop.value[0])
+        // console.log(medal)
+      }, [prop.value[0], prop.value[1]]);
 
     const onSliding = () =>{
-        prop.setCurrentMMR(prop.value[0])
-        prop.setTargetMMR(prop.value[1])
-        prop.calculatePrice();
+        
     }
 
 
-    
   return (
     <>
         <section className="functional-sec">
@@ -110,15 +211,18 @@ const Fucntional = (prop) => {
                             }
                             <span><img src={
                                 
-                                prop.functonalTile === 'ranked' ? medal1 : 
-                                prop.functonalTile === 'calibration' ? medal2 :
-                                prop.functonalTile === 'dota' ? medal3 :
-                                prop.functonalTile === 'behave' ? medal4 :
-                                prop.functonalTile === 'low' ? medal5 :
+                                medal >= 0 && medal <= 669 ? medal3 : 
+                                medal >= 770 && medal <= 1539 ? medal2 :
+                                medal >= 1540 && medal <= 2309 ? medal1 :
+                                medal >= 2310 && medal <= 3079 ? medal6 :
+                                medal >= 3080 && medal <= 3849 ? medal5 :
+                                medal >= 3850 && medal <= 4619 ? medal4 :
+                                medal >= 4620 && medal <= 5619 ? medal7 :
+                                medal >= 5620 && medal <= 8000 ? medal8 :
                                 ''
                             } alt="" /></span></h2>
                             <div className="boostbtns">
-                                <button className={prop.topbanner === 'solo'? 'boostbtn activeboostbtn' : 'boostbtn' } onClick={()=>prop.setTopBanner('solo')}>
+                                <button className={prop.topbanner === 'solo'? 'boostbtn activeboostbtn' : 'boostbtn' } onClick={()=> prop.setTopBanner('solo')}>
                                     
                                 {
                                         prop.functonalTile === 'ranked' ? 'MMR SOLO BOOST ' : 
@@ -130,7 +234,7 @@ const Fucntional = (prop) => {
                                     }
                                     
                                 </button>
-                                <button className={prop.topbanner === 'duo'? 'boostbtn activeboostbtn' : 'boostbtn' } onClick={()=>prop.setTopBanner('duo')}>
+                                <button className={prop.topbanner === 'duo'? 'boostbtn activeboostbtn' : 'boostbtn' } onClick={()=> prop.setTopBanner('duo')}>
                                 {
                                         prop.functonalTile === 'ranked' ? 'MMR DUO BOOST ' : 
                                         prop.functonalTile === 'calibration' ? 'DUO ' :
@@ -155,12 +259,13 @@ const Fucntional = (prop) => {
                                     <div className="status-img">
                                         <img src={priceapprox} alt="" />
                                     </div>
-                                    <p>Price estimate <span>{prop.calculatePrice()}</span></p>
+                                    <p>Price estimate <span>{prop.totalPrice}</span></p>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div className="sldierpart">
+                        <PricingCalculator targetMMR={prop.value[1]} currentMMR={prop.value[0]} addons={funcAddon} setTotalPrice={prop.setTotalPrice}/>
                         <RangeSlider min={0} max={
                             
                                 prop.functonalTile === 'ranked' ? '8000' : 
@@ -299,25 +404,25 @@ const Fucntional = (prop) => {
                     </div>
                     <div className="preferences">
                         <p>ROLE</p>
-                        <div className={prop.pref === '1' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('core')}>
+                        <div className={funcAddon.includes('Core') ? 'preftile activepreftile': 'preftile'} onClick={()=>coreaddon()}>
                             <div className="preimg">
                                 <img src={pref1} alt="" />
                             </div>
                             <button>CORE</button>
                         </div>
-                        <div className={prop.pref === '2' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('support')}>
+                        <div className={funcAddon.includes('Support') ? 'preftile activepreftile': 'preftile'}  onClick={()=>supportaddon()}>
                             <div className="preimg">
                                 <img src={pref2} alt="" />
                             </div>
                             <button>SUPPORT</button>
                         </div>
-                        <div className={prop.pref === '3' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('priority')}>
+                        <div className={nopref ? 'preftile activepreftile': 'preftile'} onClick={()=>noprefaddon()}>
                             <div className="preimg">
                                 <img src={pref3} alt="" />
                             </div>
                             <button>NO PREFERENCE</button>
                         </div>
-                        <div className={prop.pref === '4' ? 'preftile activepreftile': 'preftile'} onClick={()=>prop.setAddons('hero_preferences')}>
+                        <div className={funcAddon.includes('HeroPref') ? 'preftile activepreftile': 'preftile'}  onClick={()=>heroprefaddon()} >
                             <div className="preimg">
                                 <img src={pref4} alt="" />
                             </div>

@@ -17,32 +17,11 @@ function App() {
   const [value, setValue] = useState([0, 1000]);
   const [pref, setPref] = useState(1);
 
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const [currentMMR, setCurrentMMR] = useState(0);
-    const [targetMMR, setTargetMMR] = useState(0);
-    const [addons, setAddons] = useState([]);
+  const [funcAddon1, setfuncAddon1] = useState([]);
 
-    const addonPrices = {
-        "core": 0.0,
-        "support": 0.2,
-        "solo": 0.0,
-        "duo": 0.8,
-        "duo_support": 1.2,
-        "streaming": 0.25,
-        "priority": 0.25,
-        "hero_preferences": 0.15,
-    };
-
-    const basePricePerMMR = 10;  // example value
-
-    const calculatePrice = () => {
-      // console.log(addons)
-        
-        const totalAddonMultiplier = addons.reduce((acc, addon) => acc + addonPrices[addon], 0);
-        const mmrIncreaseCost = basePricePerMMR * (targetMMR - currentMMR);
-        return mmrIncreaseCost * (1 + totalAddonMultiplier);
-    };
-
+  // console.log(funcAddon1)
   return (
     <div className="App">
       <Header />
@@ -57,20 +36,14 @@ function App() {
         value ={value}
         setValue={setValue}
 
-        currentMMR={currentMMR}
-        setCurrentMMR={setCurrentMMR}
-        targetMMR={targetMMR}
-        setTargetMMR={setTargetMMR}
-        addons={addons}
-        setAddons={setAddons}
+        totalPrice={totalPrice}
+        setTotalPrice={setTotalPrice}
 
 
-
-        addonPrices={addonPrices}
-        calculatePrice={calculatePrice}
-
+        funcAddon1={funcAddon1}
+        setfuncAddon1={setfuncAddon1}
         />
-      <Payment  value={value} calculatePrice={calculatePrice}/>
+      <Payment  value={value} />
       <Purchaseinfo />
       <Footer /> 
     </div>
