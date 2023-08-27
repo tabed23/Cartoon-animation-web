@@ -113,6 +113,9 @@ const Fucntional = (prop) => {
     const [nopref, setnopref] = useState(false);
     // const [funcAddon1, setfuncAddon1] = useState([]);
 
+    const [ express, setExpress] = useState(false); 
+    const [ stream, setStream] = useState(false); 
+
     const coreaddon = () =>{
         if(funcAddon.includes('Core')){
             const arrayvalue = [ ...funcAddon ];
@@ -344,7 +347,7 @@ const Fucntional = (prop) => {
                         </div>
                     </div>
                     <div className="sldierpart">
-                        <PricingCalculator targetMMR={prop.value[1]} currentMMR={prop.value[0]} addons={funcAddon} setTotalPrice={prop.setTotalPrice}/>
+                        <PricingCalculator targetMMR={prop.value[1]} currentMMR={prop.value[0]} addons={funcAddon} stream={stream} express={express} setTotalPrice={prop.setTotalPrice}/>
                         <RangeSlider min={0} max={
                             
                                 prop.functonalTile === 'ranked' ? '8000' : 
@@ -443,15 +446,15 @@ const Fucntional = (prop) => {
                     </div>
                     <div className="checkinputs">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  />
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  onChange={()=> setExpress(!express)}/>
                             <label class="form-check-label" for="flexCheckDefault">
                             <span></span>
                                 express (+25%)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
-                            <label class="form-check-label" for="flexCheckDefault1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" onChange={()=> setStream(!stream)}/>
+                            <label class="form-check-label" for="flexCheckDefault1" >
                                 <span></span>
                                  Stream (+15%)
                             </label>
@@ -481,7 +484,8 @@ const Fucntional = (prop) => {
                         }/>
                         <button>Apply</button>
                     </div>
-                    <div className="preferences">
+                    {
+                        prop.functonalTile != 'dota' ? <div className="preferences">
                         <p>ROLE</p>
                         <div className={funcAddon.includes('Core') ? 'preftile activepreftile': 'preftile'} onClick={()=>coreaddon()}>
                             <div className="preimg">
@@ -507,7 +511,11 @@ const Fucntional = (prop) => {
                             </div>
                             <button>HERO PREFERENCES (15%)</button>
                         </div>
+                    </div> : <div className="preferences">
+                    <button className='boostbtn' onClick={()=> prop.setTopBanner('solo')}>Select your hero</button>
                     </div>
+                    }
+                    
                 </motion.div>
                 <motion.div className="duoboostblock" variants={rightvariant} ref={ref2}
                             initial="hidden"

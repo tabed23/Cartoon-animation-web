@@ -46,13 +46,23 @@ const PricingCalculator = (props) => {
                 }
             }
         }
+
+        if(props.stream){
+            price =  1.15*price
+            console.log(price)
+        }
+        if(props.express === true){
+            console.log('expresses')
+            price =  1.25*price
+        }
+       
         props.setTotalPrice(price);
     };
 
     // Call the function on component mount or when props change
     React.useEffect(() => {
         calculateTotalPrice(props.targetMMR, props.currentMMR, props.addons);
-    }, [props.targetMMR, props.currentMMR, props.addons]);
+    }, [props.targetMMR, props.currentMMR, props.addons, props.stream, props.express]);
 
 }
 

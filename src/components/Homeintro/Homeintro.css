@@ -35,14 +35,15 @@
 .homeintro.singlebg .col-lg-7::before{
   content: '';
   position: absolute;
-  left: -112px;
-  top: -276px;
-  width: 904.132px;
+  left: -495px;
+top: -149px;
+width: 904.132px;
   height: 926.76px;
-  background-image: url(../../assets/bg//homeintrobefore.svg);
+  background-image: url(../../assets/images/homeintrobanner2.png);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -1;
+  opacity: 0.1;
 }
 
 .homeintrobanner img{
