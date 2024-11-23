@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building the application...
+      - npm run build
+  post_build:
+    commands:
+      - echo Packaging and uploading build to S3...
+      - aws s3 cp build/ s3://bro-cartoon-s3-bucket/ --recursive
+
+artifacts:
+  files:
+    - '**/*'
+
