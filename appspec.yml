@@ -1,13 +1,10 @@
 version: 0.0
 os: linux
-
 files:
-  - source: / # Root of the build artifact from CodeBuild
-    destination: /var/www/html # Replace with your Nginx document root
-
+  - source: /
+    destination: /aws-codepipeline
 hooks:
-  AfterInstall:
-    - location: scripts/restart_nginx.sh
-      timeout: 300
+  ApplicationStart:
+    - location: scripts/start-process.sh
+      timeout: 3000
       runas: root
-
