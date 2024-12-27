@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - aws --version
+      - echo Logging in to Amazon ECR....
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 823712965653.dkr.ecr.us-east-1.amazonaws.com
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t jewel-cartoon-repo .
+      - docker tag jewel-cartoon-repo:latest 823712965653.dkr.ecr.us-east-1.amazonaws.com/jewel-cartoon-repo:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo pushing to AWS ECR 
+      - docker push 823712965653.dkr.ecr.us-east-1.amazonaws.com/jewel-cartoon-repo:latest
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/start-process.sh
